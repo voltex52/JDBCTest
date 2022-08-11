@@ -8,17 +8,8 @@ import jm.task.core.jdbc.util.Util;
 
 public class Main {
     public static void main(String[] args) {
-        UserDaoHibernateImpl userDaoHibernate = new UserDaoHibernateImpl();
-//        userDaoHibernate.createUsersTable();
-//        userDaoHibernate.saveUser("Name1", "LastName1", (byte) 20);
-//        userDaoHibernate.saveUser("Name2", "LastName2", (byte) 25);
-//        userDaoHibernate.removeUserById(1);
-//        userDaoHibernate.getAllUsers();
-//        userDaoHibernate.cleanUsersTable();
-//        userDaoHibernate.dropUsersTable();
-//        Util.getConnection();
-//
         UserServiceImpl userService = new UserServiceImpl();
+//        userService.createUsersTable();
 //
 //       userService.saveUser("Name1", "LastName1", (byte) 20);
 //        userService.saveUser("Name2", "LastName2", (byte) 25);
@@ -28,7 +19,7 @@ public class Main {
 //        userService.getAllUsers();
 
 
-//       userService.dropUsersTable();
+       userService.dropUsersTable();
 
     }
 }
