@@ -27,6 +27,7 @@ public class Util {
                 System.out.println("Соединение с БД установлено");
             }
         } catch (SQLException e) {
+//            e.printStackTrace();
             System.out.println("Соединение с БД не установлено");
         }
         return conn;
