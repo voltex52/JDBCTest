@@ -16,7 +16,7 @@ public class Util {
 
     public static Connection getConnection() {
         try {
-            DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+//            DriverManager.registerDriver(new com.mysql.jdbc.Driver());
             conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             conn.setAutoCommit(false);
             if (!conn.isClosed()) {
