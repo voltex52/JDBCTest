@@ -1,11 +1,5 @@
 package jm.task.core.jdbc.util;
 
-import jm.task.core.jdbc.model.User;
-import org.hibernate.SessionFactory;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.cfg.Environment;
-import org.hibernate.service.ServiceRegistry;
 
 import java.sql.Connection;
 import java.sql.Driver;
@@ -17,10 +11,12 @@ public class Util {
     private static final String URL = "jdbc:mysql://localhost:3306/Users";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "voltex";
+    private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
     private static Connection conn;
 
     public static Connection getConnection() {
         try {
+            DriverManager.registerDriver(new com.mysql.jdbc.Driver());
             conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             conn.setAutoCommit(false);
             if (!conn.isClosed()) {
@@ -31,6 +27,7 @@ public class Util {
             System.out.println("Соединение с БД не установлено");
         }
         return conn;
+
     }
 }
 
